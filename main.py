@@ -50,7 +50,7 @@ if __name__ == "__main__":
             ).checkBtn("make_slab"  , "Создать плиту"    , pos={"c":1, "r":1}, padding=3
             ).checkBtn("make_stairs", "Создать ступеньки", pos={"c":1, "r":2}, padding=3
             ).buttom(makeBlockBtn, name="Создать"
-            ).ico().start()
+            ).start()
 
         pass
     

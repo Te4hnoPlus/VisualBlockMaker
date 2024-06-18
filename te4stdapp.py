@@ -30,14 +30,6 @@ class baseApp:
         self.addVarComp(var="size", funcGet=lambda:self.root.size, funcSet=setSize)
 
 
-    def ico(self, path="icon.png"):
-        try:
-            self.root.call("wm", "iconphoto", self.root._w, PhotoImage(file=path))
-        except:
-            print(f"Can't set icon [{path}]")
-        return self
-
-
     def setTitle(self, title):
         self.title = title
         self.root.title(title)
@@ -271,6 +263,15 @@ class stdApp(baseApp):
             self.onClose(onClose0)
         else:
             self.config = config
+
+
+    def ico(self, path="icon.png"):
+        try:
+            self.root.call("wm", "iconphoto", self.root._w, PhotoImage(file=path))
+        except:
+            print(f"Can't set icon [{path}]")
+            logError()
+        return self
 
 
 class subWindow(baseApp):
